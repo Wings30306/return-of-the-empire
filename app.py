@@ -14,6 +14,10 @@ APP = Flask(__name__)
 def hello_world():
     return render_template('pages/index.html', title="The Lazy Padwan")
 
+@APP.route('/about')
+def about():
+    return render_template('pages/about.html', title="About")
+
 if __name__ == '__main__':
     APP.run(host=os.environ.get('HOSTNAME'),
             port=int(os.environ.get('PORT')),
